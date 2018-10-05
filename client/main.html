@@ -1,0 +1,53 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>notemanager</title>
+</head>
+
+<body>
+  <nav class="red">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Note Manager</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="nav-item">
+            {{> loginButtons}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {{#if currentUser}}
+  <div class="container">
+    {{> add}}
+  </div>
+  {{/if}}
+  <div class="container">
+    <h1>Latest Notes</h1>
+    {{#if currentUser}}
+    <ul class="collection">
+      {{#each notes}}
+        {{> note}}
+      {{/each}}
+    </ul>
+    {{else}}
+    <p>Please log in to manage notes</p>
+    {{/if}}
+  </div>
+</body>
+
+<template name="note">
+  <li class="collection-item">
+    {{text}}
+    <a href="#" class="delete-note secondary-content">
+        <i class="material-icons">close</i>
+    </a>
+    <blockquote>Added by {{username}}</blockquote>
+  </li>
+</template>
+
+<template name="add">
+  <h3>Add Note</h3>
+  <form class="add-form">
+    <input type="text" name="text" placeholder="Add a note...">
+  </form>
+</template>
