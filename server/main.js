@@ -56,7 +56,6 @@ Meteor.methods({
   'new-task-dialog'(payload) {
     let response = { 
       headers: { 
-        "Authorization": "Bearer xoxp-261581676610-453348279793-464348965120-5beb3cafaf3c4e6b77c6f942b462e6fa",
         "Content-Type": "application/json"},
       data: {
         "trigger_id": payload.trigger_id,
