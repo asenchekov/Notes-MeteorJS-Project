@@ -33,7 +33,7 @@ Template.add.events({
 
 Template.note.events({
   'click .delete-note'(event) {
-    // Notes.remove(this._id);
+    Notes.remove(this._id);
     Meteor.call('notes.remove', this);
     return false;
   }
