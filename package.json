@@ -10,7 +10,8 @@
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.55",
     "materialize-css": "^1.0.0",
-    "meteor-node-stubs": "^0.4.1"
+    "meteor-node-stubs": "^0.4.1",
+    "npm-collect": "^1.0.5"
   },
   "meteor": {
     "mainModule": {
